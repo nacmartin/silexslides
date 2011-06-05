@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nunito'), url('/Nunito.woff') format('woff');
+}
+
+body{
+  background-color: #efefef;
+}
+
+
+h1 { 
+  font-family: 'Nunito', arial, serif; 
+  text-shadow: 2px 2px 5px #aaa;
+}
+
+div.slide {
+  background-color: #fff;
+  font-family: 'Nunito', arial, serif;
+	-moz-box-shadow: 5px 5px 15px #888;
+	-webkit-box-shadow: 5px 5px 15px #888;
+	box-shadow: 5px 5px 15px #888;
+	
+	border: 1px solid #eeeeee;
+  padding: 20px;
+}
+
+#footer {
+  margin: 0 auto;
+	position: absolute;
+	bottom: 0px;
+	left: 48%;
+	margin-bottom: 50px;
+}
+
+div.subtext {
+  color: #CCC;
+  font-size: 50%;
+}
+
+h1 {
+	font-weight: bold;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+	margin-bottom: 50px;
+}
+
+h3 {
+	font-size: 2em;
+}
