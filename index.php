@@ -5,8 +5,14 @@ error_reporting(E_ALL);
 require_once __DIR__.'/silex.phar';
 require_once __DIR__.'/markdown.php';
 
+use Symfony\Component\HttpFoundation\Response;
+
 $app = new Silex\Application();
 $app['slides_dir'] = __DIR__.'/slides/';
+
+$app->register(new Silex\Extension\HttpCacheExtension(), array(
+    'http_cache.cache_dir' => __DIR__.'/cache/',
+));
 
 $app->register(new Silex\Extension\TwigExtension(), array(
     'twig.path'       => __DIR__.'/views',
@@ -25,9 +31,13 @@ $app->get('/', function () use ($app){
         }
         closedir($handle);
     }
-    return $app['twig']->render('slide.twig', array(
+    $resp = $app['twig']->render('slide.twig', array(
         'slides' => $slides,
+    ));
+
+    return new Response($resp, 200, array(
+        'Cache-Control' => 's-maxage=60',
     ));
 });
 
-$app->run();
+$app['http_cache']->run();
