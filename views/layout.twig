@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+  {% block head %}
+    <link rel="stylesheet" href="/slippy.css" />
+    <link rel="stylesheet" href="/slippy-pure-big-font.css" />
+    <link rel="stylesheet" href="/main.css" />
+    <title>{% block title %}{% endblock %} - Silex Jornadas Symfony 2011</title>
+    <script src="/js/jquery-1.6.1.min.js"></script>
+    <script src="/js/jquery.history.js"></script>
+    <script src="/js/slippy.js"></script>
+    <script src="/js/shCore.js"></script>
+    <script src="/js/shBrushPhp.js"></script>
+  {% endblock %}
+</head>
+<body>
+        <script type="text/javascript">
+            $(function() {
+                $(".slide").slippy({
+                });
+                SyntaxHighlighter.all();
+            });
+        </script>
+  {% block content %}{% endblock %}
+    <div id="footer">
+      <a href="http://nacho-martin.com/">Nacho Martín</a>
+    </div>
+</body>
+</html>
