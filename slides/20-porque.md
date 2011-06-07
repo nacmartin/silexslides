@@ -1,11 +1,6 @@
 # Microframeworks 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
 <center>
 ##¿Por qué?
+![Alt text](/imgs/mourinho.jpg)
 </center>

@@ -21,22 +21,26 @@ $app->register(new Silex\Extension\TwigExtension(), array(
 
 $app->get('/', function () use ($app){
     $slides = array();
+    $files  = array();
     if ($handle = opendir($app['slides_dir'])) {
         while (false !== ($file = readdir($handle))) {
             if ($file != "." && $file != "..") {
-                $slide = Markdown(file_get_contents($app['slides_dir'].$file));
-                array_push($slides, $slide);
-                $slides = array_reverse($slides);
+                array_push($files, $file);;
             }
         }
         closedir($handle);
+    }
+    sort($files, SORT_LOCALE_STRING); 
+    foreach($files as $file){
+        $slide = Markdown(file_get_contents($app['slides_dir'].$file));
+        array_push($slides, $slide);
     }
     $resp = $app['twig']->render('slide.twig', array(
         'slides' => $slides,
     ));
 
     return new Response($resp, 200, array(
-        'Cache-Control' => 's-maxage=60',
+        'Cache-Control' => 's-maxage=0',
     ));
 });
 
