@@ -2,7 +2,7 @@
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
-  src: local('Nunito'), url('/Nunito.woff') format('woff');
+  src: local('Nunito'), url('/css/Nunito.woff') format('woff');
 }
 
 body{
@@ -30,7 +30,7 @@ div.slide {
   margin: 0 auto;
 	position: absolute;
 	bottom: 0px;
-	left: 48%;
+	left: 42%;
 	margin-bottom: 50px;
 }
 
@@ -46,8 +46,13 @@ h1 {
 h2 {
   font-family: 'Nunito', Arial, sans-serif;
 	margin-bottom: 50px;
+  text-shadow: 2px 2px 5px #aaa;
 }
 
 h3 {
 	font-size: 2em;
+}
+
+.minilist li {
+  font-size: 0.9em;
 }

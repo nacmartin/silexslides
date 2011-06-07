@@ -30,7 +30,7 @@ $app->get('/', function () use ($app){
         }
         closedir($handle);
     }
-    sort($files, SORT_LOCALE_STRING); 
+    sort($files, SORT_NUMERIC); 
     foreach($files as $file){
         $slide = Markdown(file_get_contents($app['slides_dir'].$file));
         array_push($slides, $slide);
