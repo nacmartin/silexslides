@@ -3,8 +3,8 @@
 {% block content %}
 
 {% for slide in slides %}
-<div class="slide">
-{{ slide|raw }}
+<div class="slide {{ slide["class"] }}">
+{{ slide["slide"]|raw }}
 </div>
 {% endfor %}
 {% endblock %}

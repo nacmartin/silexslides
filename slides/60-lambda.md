@@ -1,5 +1,4 @@
 %section%
 <center class="vcenter">
-#Extensiones
-
+#λ
 </center>

@@ -10,6 +10,8 @@
     
     $app->run();
 
-<p class="incremental">silex.phar</p>
-<p class="incremental">Crear instancia</p>
-<p class="incremental">Closures ¡λ!</p>
+silex.phar
+
+Crear instancia
+
+λ & closures

@@ -56,3 +56,19 @@ h3 {
 .minilist li {
   font-size: 0.9em;
 }
+
+.slide.section {
+  background-color: #000;
+}
+
+.slide.section h1{
+  color: #fff;
+}
+
+.slide p{
+  color: #fff;
+}
+
+.slide a{
+  color: #aaa;
+}

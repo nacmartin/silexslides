@@ -32,7 +32,17 @@ $app->get('/', function () use ($app){
     }
     sort($files, SORT_NUMERIC); 
     foreach($files as $file){
-        $slide = Markdown(file_get_contents($app['slides_dir'].$file));
+        $content = file_get_contents($app['slides_dir'].$file);
+        //Possible metadata in first line
+        $matches = array();
+        preg_match('/%(.*)%/', $content, $matches);
+        $classslide = null;
+        if($matches){
+            $classslide = $matches[1];
+            $content = preg_replace('/%(.*)%/', '', $content);
+        }
+        $slide['slide'] = Markdown($content);
+        $slide['class'] = $classslide;
         array_push($slides, $slide);
     }
     $resp = $app['twig']->render('slide.twig', array(
