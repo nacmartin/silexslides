@@ -337,7 +337,7 @@
         if (options.incrementalBefore) {
             options.incrementalBefore(el);
         } else {
-            $(el).css({ opacity: 0.05 });
+            $(el).css({ opacity: 0.01 });
         }
     };
 

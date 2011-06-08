@@ -72,3 +72,7 @@ h3 {
 .slide a{
   color: #aaa;
 }
+
+.slide.section h2{
+  color: #fff;
+}
