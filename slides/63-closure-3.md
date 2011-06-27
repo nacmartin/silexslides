@@ -13,8 +13,4 @@
     $sumador = $calculadora('+');
     echo $sumador(2, 3);
 
-    5
-
-Un concepto simple pero potente
-
 </center>
