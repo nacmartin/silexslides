@@ -6,8 +6,11 @@ require_once __DIR__.'/silex.phar';
 require_once __DIR__.'/markdown.php';
 
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 $app = new Silex\Application();
+
 $app['slides_dir'] = __DIR__.'/slides/';
 
 $app->register(new Silex\Extension\HttpCacheExtension(), array(
@@ -52,6 +55,15 @@ $app->get('/', function () use ($app){
     return new Response($resp, 200, array(
         'Cache-Control' => 's-maxage=0',
     ));
+});
+
+$app->error(function (\Exception $e) {
+    if ($e instanceof NotFoundHttpException) {
+        return new Response('La página que buscas no está aquí.', 404);
+    }
+
+    $code = ($e instanceof HttpException) ? $e->getStatusCode() : 500;
+    return new Response('Algo ha fallado en nuestra sala de máquinas.', $code);
 });
 
 $app['http_cache']->run();
