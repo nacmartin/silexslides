@@ -30,7 +30,7 @@ div.slide {
   margin: 0 auto;
 	position: absolute;
 	bottom: 0px;
-	left: 38%;
+	left: 42%;
 	margin-bottom: 50px;
 }
 
@@ -75,4 +75,8 @@ h3 {
 
 .slide.section h2{
   color: #fff;
+}
+
+.smalllist {
+  font-size: 1.3em;
 }

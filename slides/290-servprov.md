@@ -1,5 +1,5 @@
 %section%
 <center class="vcenter">
-#Extensiones
+#Proveedores de servicios
 
 </center>

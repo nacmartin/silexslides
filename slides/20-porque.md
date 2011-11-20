@@ -1,8 +1,6 @@
 %section%
 
+<center class="vcenter">
 # <span style="font-family:Sans">μ</span>frameworks 
+</vcenter>
 
-<center class="incremental">
-##¿Por qué?
-![Alt text](/imgs/mourinho.jpg)
-</center>
