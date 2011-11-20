@@ -1,0 +1,16 @@
+#Routing
+
+
+    $app->get('/Hola/{nombre}', //...
+
+    $app->post('/Hola/{nombre}', //...
+
+    $app->put('/Hola/{nombre}', //...
+
+    $app->delete('/Hola/{nombre}', //...
+
+    $app->match('/Hola/{nombre}', //...
+
+El orden importa
+
+
