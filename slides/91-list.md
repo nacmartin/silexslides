@@ -13,7 +13,7 @@ Pimple (inyección de dependencias)
 </p>
 
 <p class="incremental">
-Extensiones
+Extensible
 </p>
 
 <p class="incremental">
