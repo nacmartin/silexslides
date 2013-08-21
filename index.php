@@ -2,22 +2,24 @@
 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-require_once __DIR__.'/silex.phar';
+require_once __DIR__.'/vendor/autoload.php';
 require_once __DIR__.'/markdown.php';
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Silex\Provider\HttpCacheServiceProvider;
+use Silex\Provider\TwigServiceProvider;
 
 $app = new Silex\Application();
 
 $app['slides_dir'] = __DIR__.'/slides/';
 
-$app->register(new Silex\Extension\HttpCacheExtension(), array(
+$app->register(new HttpCacheServiceProvider(), array(
     'http_cache.cache_dir' => __DIR__.'/cache/',
 ));
 
-$app->register(new Silex\Extension\TwigExtension(), array(
+$app->register(new TwigServiceProvider, array(
     'twig.path'       => __DIR__.'/views',
     'twig.class_path' => __DIR__.'/vendor/twig/lib',
 ));
