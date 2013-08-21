@@ -1,0 +1,6 @@
+{
+    "require": {
+        "silex/silex": "~1.0",
+        "twig/twig": ">=1.8.0,<2.0-dev"
+    }
+}
